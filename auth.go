@@ -1,4 +1,4 @@
-package hashicups
+package leostream
 
 import (
 	"encoding/json"

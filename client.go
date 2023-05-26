@@ -1,4 +1,4 @@
-package hashicups
+package leostream
 
 import (
 	"fmt"
@@ -8,7 +8,7 @@ import (
 )
 
 // HostURL - Default Hashicups URL
-const HostURL string = "http://localhost:19090"
+const HostURL string = "http://localhost"
 
 // Client -
 type Client struct {
@@ -35,7 +35,7 @@ type AuthResponse struct {
 func NewClient(host, username, password *string) (*Client, error) {
 	c := Client{
 		HTTPClient: &http.Client{Timeout: 10 * time.Second},
-		// Default Hashicups URL
+		// Default Leostream URL
 		HostURL: HostURL,
 	}
 

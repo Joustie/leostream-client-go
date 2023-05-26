@@ -1,3 +1,3 @@
-## Hashicups Client (Go)
+## Leostream Client (Go)
 
-A Go library for [Hashicups](https://github.com/hashicorp-demoapp/product-api-go)
+A Go library for the Leostream REST API
