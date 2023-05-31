@@ -19,7 +19,7 @@ func (c *Client) GetCenters() ([]Center, error) {
 		return nil, err
 	}
 
-	centers := []Centers{}
+	centers := []Center{}
 	err = json.Unmarshal(body, &centers)
 	if err != nil {
 		return nil, err
