@@ -20,7 +20,7 @@ type Client struct {
 
 // AuthStruct -
 type AuthStruct struct {
-	Username string `json:"use_login"`
+	Username string `json:"user_login"`
 	Password string `json:"password"`
 }
 
