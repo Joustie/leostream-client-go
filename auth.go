@@ -47,7 +47,7 @@ func (c *Client) SignIn() (*AuthResponse, error) {
 		return nil, err
 	}
 
-	req, err := http.NewRequest("POST", fmt.Sprintf("%s/signin", c.HostURL), strings.NewReader(string(rb)))
+	req, err := http.NewRequest("POST", fmt.Sprintf("%s/session/login", c.HostURL), strings.NewReader(string(rb)))
 	if err != nil {
 		return nil, err
 	}
@@ -76,7 +76,7 @@ func (c *Client) GetUserTokenSignIn(auth AuthStruct) (*AuthResponse, error) {
 		return nil, err
 	}
 
-	req, err := http.NewRequest("POST", fmt.Sprintf("%s/signin", c.HostURL), strings.NewReader(string(rb)))
+	req, err := http.NewRequest("POST", fmt.Sprintf("%s/session/login", c.HostURL), strings.NewReader(string(rb)))
 	if err != nil {
 		return nil, err
 	}
@@ -97,7 +97,7 @@ func (c *Client) GetUserTokenSignIn(auth AuthStruct) (*AuthResponse, error) {
 
 // SignOut - Revoke the token for a user
 func (c *Client) SignOut(authToken *string) error {
-	req, err := http.NewRequest("POST", fmt.Sprintf("%s/signout", c.HostURL), strings.NewReader(string("")))
+	req, err := http.NewRequest("POST", fmt.Sprintf("%s/session/logout", c.HostURL), strings.NewReader(string("")))
 	if err != nil {
 		return err
 	}
