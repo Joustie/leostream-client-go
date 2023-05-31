@@ -9,6 +9,6 @@ type Center struct {
 	Online       int                `json:"online"`
 	Status       int                `json:"status"`
 	Status_label string             `json:"status_label"`
-	Center_type  string             `json:"center_type"`
+	Center_type  string             `json:"type"`
 	Type_label   string             `json:"type_label"`
 }
