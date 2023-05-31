@@ -70,6 +70,7 @@ func (c *Client) doRequest(req *http.Request, authToken *string) ([]byte, error)
 		token = *authToken
 	}
 
+	req.Header.Set("Content-Type", "application/json ")
 	req.Header.Set("Authorization", "Bearer " + token)
  
 	c.HostURL = "http://localhost"
