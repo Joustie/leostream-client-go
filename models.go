@@ -12,3 +12,9 @@ type Center struct {
 	Center_type  string             `json:"type"`
 	Type_label   string             `json:"type_label"`
 }
+
+// Gateway -
+type Gateway struct {
+	ID           int                `json:"id"`
+	Name         string             `json:"name"`
+}
