@@ -7,7 +7,7 @@ import (
 	"strings"
 )
 
-// GetGateways - Returns list of coffees (no auth required)
+// GetGateways - Returns list of gateways (no auth required)
 func (c *Client) GetGateways() ([]Gateway, error) {
 	req, err := http.NewRequest("GET", fmt.Sprintf("%s/gateways", c.HostURL), nil)
 	if err != nil {
@@ -28,9 +28,9 @@ func (c *Client) GetGateways() ([]Gateway, error) {
 	return gateways, nil
 }
 
-// GetGateway - Returns specific gateway (no auth required)
-func (c *Client) GetGateway(gatewayID string) ([]Gateway, error) {
-	req, err := http.NewRequest("GET", fmt.Sprintf("%s/gateways/%s", c.HostURL, gatewayID), nil)
+// GetGateway - Returns a specific gateway
+func (c *Client) GetGateway(gatewayID string) (*Gateway, error) {
+	req, err := http.NewRequest("GET", fmt.Sprintf("%s/orders/%s", c.HostURL, gatewayID), nil)
 	if err != nil {
 		return nil, err
 	}
@@ -40,13 +40,13 @@ func (c *Client) GetGateway(gatewayID string) ([]Gateway, error) {
 		return nil, err
 	}
 
-	gateways := []Gateway{}
-	err = json.Unmarshal(body, &gateways)
+	gateway := Gateway{}
+	err = json.Unmarshal(body, &gateway)
 	if err != nil {
 		return nil, err
 	}
 
-	return gateways, nil
+	return &gateway, nil
 }
 
 // CreateGateway - Create new gateway
