@@ -51,7 +51,7 @@ func (c *Client) GetGateway(gatewayID string) (*Gateway, error) {
 
 // CreateGateway - Create new gateway
 func (c *Client) CreateGateway(gateway NewGateway, authToken *string) (*GwStored, error) {
-	
+
 	rb, err := json.Marshal(gateway)
 	if err != nil {
 		return nil, err
