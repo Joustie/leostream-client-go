@@ -50,7 +50,7 @@ func (c *Client) GetGateway(gatewayID string) (*Gateway, error) {
 }
 
 // CreateGateway - Create new gateway
-func (c *Client) CreateGateway(gateway NewGateway, authToken *string) (*NewGateway, error) {
+func (c *Client) CreateGateway(gateway NewGateway, authToken *string) (*Gateway, error) {
 	rb, err := json.Marshal(gateway)
 	if err != nil {
 		return nil, err
@@ -66,7 +66,7 @@ func (c *Client) CreateGateway(gateway NewGateway, authToken *string) (*NewGatew
 		return nil, err
 	}
 
-	newGateway := NewGateway{}
+	newGateway := Gateway{}
 	err = json.Unmarshal(body, &newGateway)
 	if err != nil {
 		return nil, err
