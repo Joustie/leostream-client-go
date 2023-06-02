@@ -24,6 +24,10 @@ type Gateway struct {
 	Notes            string `json:"notes"`
 }
 
+type GwStored struct {
+	Gateways[]Gateway `json:"stored_data,omitempty"`
+}	
+
 type NewGateway struct {
 	Name             string `json:"name"`
 	Address          string `json:"address"`
