@@ -38,7 +38,7 @@ type GatewayStored struct {
 }
 
 type GatewaysStored struct {
-	Gateways []GatewayStored `json:"stored_data,omitempty"`
+	Stored_data GatewayStored `json:"stored_data,omitempty"`
 }
 
 type NewGateway struct {
