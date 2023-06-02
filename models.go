@@ -19,7 +19,7 @@ type Gateway struct {
 	Name             string `json:"name"`
 	Address          string `json:"address"`
 	Address_private  string `json:"address_private"`
-	load_balancer_id int    `json:"load_balancer_id"`
-	user_src_ip      int    `json:"user_src_ip"`
-	notes            string `json:"notes"`
+	Load_balancer_id int    `json:"load_balancer_id"`
+	Use_src_ip       int    `json:"use_src_ip"`
+	Notes            string `json:"notes"`
 }
