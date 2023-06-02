@@ -15,7 +15,6 @@ type Center struct {
 
 // Gateway -
 type Gateway struct {
-	ID               int    `json:"id"`
 	Name             string `json:"name"`
 	Address          string `json:"address"`
 	Address_private  string `json:"address_private"`
