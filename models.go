@@ -24,8 +24,21 @@ type Gateway struct {
 	Notes            string `json:"notes"`
 }
 
-type GwStored struct {
-	Gateways []Gateway `json:"stored_data,omitempty"`
+type GatewayStored struct {
+	ID               int    `json:"id"`
+	Name             string `json:"name"`
+	Address          string `json:"address"`
+	Address_private  string `json:"address_private"`
+	Load_balancer_id int    `json:"load_balancer_id"`
+	Use_src_ip       int    `json:"use_src_ip"`
+	Notes            string `json:"notes"`
+	Created          string `json:"created"`
+	Updated          string `json:"updated"`
+	Oneline          int    `json:"online"`
+}
+
+type GatewaysStored struct {
+	Gateways []GatewayStored `json:"stored_data,omitempty"`
 }
 
 type NewGateway struct {
