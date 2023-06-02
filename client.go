@@ -1,22 +1,22 @@
 package leostream
 
 import (
+	"crypto/tls"
 	"fmt"
 	"io/ioutil"
 	"net/http"
 	"time"
-	"crypto/tls"
 )
 
 // HostURL - Default Hashicups URL
-const HostURL string = "http://localhost"	
+const HostURL string = "http://localhost"
 
 // Client -
 type Client struct {
 	HostURL    string
 	HTTPClient *http.Client
 	Token      string
-	Auth       AuthStruct	
+	Auth       AuthStruct
 }
 
 // AuthStruct -
@@ -36,8 +36,8 @@ type AuthResponse struct {
 func NewClient(host, username, password *string) (*Client, error) {
 
 	tr := &http.Transport{
-        TLSClientConfig: &tls.Config{InsecureSkipVerify: true},
-    }
+		TLSClientConfig: &tls.Config{InsecureSkipVerify: true},
+	}
 
 	c := Client{
 		HTTPClient: &http.Client{Timeout: 10 * time.Second, Transport: tr},
@@ -77,8 +77,8 @@ func (c *Client) doRequest(req *http.Request, authToken *string) ([]byte, error)
 	}
 
 	req.Header.Set("Content-Type", "application/json ")
-	req.Header.Set("Authorization", "Bearer " + token)
- 
+	req.Header.Set("Authorization", "Bearer "+token)
+
 	//c.HostURL = "http://localhost"
 
 	res, err := c.HTTPClient.Do(req)
