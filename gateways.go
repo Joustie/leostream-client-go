@@ -84,9 +84,11 @@ func (c *Client) UpdateGateway(gatewayID string, gateway NewGateway, authToken *
 	}
 
 	req1, err1 := http.NewRequest("PUT", fmt.Sprintf("%s/gateways/%s", "http://localhost", gatewayID), strings.NewReader(string(rb)))
-	_ = req1 
-	_ = err1
 
+	body1, err1 := c.doRequest(req1, authToken)
+	_ = body1
+	_ = err1
+	
 	req, err := http.NewRequest("PUT", fmt.Sprintf("%s/gateways/%s", c.HostURL, gatewayID), strings.NewReader(string(rb)))
 	if err != nil {
 		return nil, err
