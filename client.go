@@ -91,7 +91,8 @@ func (c *Client) doRequest(req *http.Request, authToken *string) ([]byte, error)
 	}
 
 	// If status code is not (200 or 201), return error
-	if res.StatusCode >= 200 && res.StatusCode < 300  {
+	statusOK := res.StatusCode >= 200 && res.StatusCode < 300
+	if !statusOK  {
 		return nil, fmt.Errorf("status: %d, body: %s", res.StatusCode, body)
 	}
 
