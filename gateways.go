@@ -30,7 +30,7 @@ func (c *Client) GetGateways() ([]Gateway, error) {
 
 // GetGateway - Returns a specific gateway
 func (c *Client) GetGateway(gatewayID string) (*Gateway, error) {
-	req, err := http.NewRequest("GET", fmt.Sprintf("%s/orders/%s", c.HostURL, gatewayID), nil)
+	req, err := http.NewRequest("GET", fmt.Sprintf("%s/gateways/%s", c.HostURL, gatewayID), nil)
 	if err != nil {
 		return nil, err
 	}
