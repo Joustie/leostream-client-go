@@ -126,7 +126,7 @@ func (c *Client) DeleteGateway(gatewayID string, authToken *string) error {
 		return err
 	}
 
-	if string(body) != "Deleted gateway" {
+	if string(body) != "" {
 		return errors.New(string(body))
 	}
 
