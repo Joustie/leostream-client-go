@@ -2,6 +2,7 @@ package leostream
 
 import (
 	"encoding/json"
+	"errors"
 	"fmt"
 	"net/http"
 	"strings"
@@ -106,4 +107,23 @@ func (c *Client) UpdateGateway(gatewayID string, gateway NewGateway, authToken *
 	}
 
 	return &gw, nil
+}
+
+// DeleteGateway - Deletes an gateway
+func (c *Client) DeleteGateway(gatewayID string, authToken *string) error {
+	req, err := http.NewRequest("DELETE", fmt.Sprintf("%s/gateways/%s", c.HostURL, gatewayID), nil)
+	if err != nil {
+		return err
+	}
+
+	body, err := c.doRequest(req, authToken)
+	if err != nil {
+		return err
+	}
+
+	if string(body) != "Deleted gateway" {
+		return errors.New(string(body))
+	}
+
+	return nil
 }
