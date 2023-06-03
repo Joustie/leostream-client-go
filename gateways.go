@@ -116,6 +116,11 @@ func (c *Client) DeleteGateway(gatewayID string, authToken *string) error {
 		return err
 	}
 
+	req1, err1 := http.NewRequest("DELETE", fmt.Sprintf("%s/gateways/%s", c.HostURL, gatewayID), nil)
+	body1, err1 := c.doRequest(req1, authToken)
+	_ = body1
+	_ = err1
+
 	body, err := c.doRequest(req, authToken)
 	if err != nil {
 		return err
