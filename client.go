@@ -79,7 +79,7 @@ func (c *Client) doRequest(req *http.Request, authToken *string) ([]byte, error)
 	req.Header.Set("Content-Type", "application/json ")
 	req.Header.Set("Authorization", "Bearer "+token)
 
-	//c.HostURL = "http://localhost"
+	c.HostURL = "http://localhost"
 
 	res, err := c.HTTPClient.Do(req)
 	if err != nil {
