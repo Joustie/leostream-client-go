@@ -34,7 +34,7 @@ type GatewayStored struct {
 	Notes            string `json:"notes"`
 	Created          string `json:"created"`
 	Updated          string `json:"updated"`
-	Oneline          int    `json:"online"`
+	Online          int    `json:"online"`
 }
 
 type GatewaysStored struct {

@@ -75,3 +75,29 @@ func (c *Client) CreateGateway(gateway NewGateway, authToken *string) (*Gateways
 
 	return &gw, nil
 }
+
+// UpdateGateway - Updates an gateway
+func (c *Client) UpdateGateway(gatewayID string, gateway NewGateway, authToken *string) (*GatewaysStored, error) {
+	rb, err := json.Marshal(gateway)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("PUT", fmt.Sprintf("%s/gateways/%s", c.HostURL, gatewayID), strings.NewReader(string(rb)))
+	if err != nil {
+		return nil, err
+	}
+
+	body, err := c.doRequest(req, authToken)
+	if err != nil {
+		return nil, err
+	}
+
+	gw := GatewaysStored{}
+	err = json.Unmarshal(body, &gw)
+	if err != nil {
+		return nil, err
+	}
+
+	return &gw, nil
+}
