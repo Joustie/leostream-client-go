@@ -34,7 +34,7 @@ type GatewayStored struct {
 	Notes            string `json:"notes"`
 	Created          string `json:"created"`
 	Updated          string `json:"updated"`
-	Online          int    `json:"online"`
+	Online           int    `json:"online"`
 }
 
 type GatewaysStored struct {
@@ -42,6 +42,45 @@ type GatewaysStored struct {
 }
 
 type NewGateway struct {
+	Name             string `json:"name"`
+	Address          string `json:"address"`
+	Address_private  string `json:"address_private"`
+	Load_balancer_id int    `json:"load_balancer_id"`
+	Use_src_ip       int    `json:"use_src_ip"`
+	Notes            string `json:"notes"`
+}
+
+type NewPool struct {
+	Display_name     string           `json:"display_name"`
+	Name            string           `json:"name"`
+	Pool_definition []PoolDefinition `json:"pool_definition,omitempty"`
+	Provision       Provision        `json:"provision,omitempty"`
+}
+
+// OrderItem -
+type PoolDefinition struct {
+	Server_ids    []int  `json:"server_ids"`
+	Never_rogue   int    `json:"never_rogue"`
+	Restricted_by string `json:"restricted_by"`
+}
+
+type Provision struct {
+	On_off int `json:"on_off"`
+}
+
+// Pool -
+type Pool struct {
+	ID               int    `json:"id"`
+	Name             string `json:"name"`
+	Address          string `json:"address"`
+	Address_private  string `json:"address_private"`
+	Load_balancer_id int    `json:"load_balancer_id"`
+	Use_src_ip       int    `json:"use_src_ip"`
+	Notes            string `json:"notes"`
+}
+
+type PoolStored struct {
+	ID               int    `json:"id"`
 	Name             string `json:"name"`
 	Address          string `json:"address"`
 	Address_private  string `json:"address_private"`
