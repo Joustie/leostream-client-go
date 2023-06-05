@@ -87,10 +87,10 @@ type Pool struct {
 	Domain                     PoolDomain     `json:"domain"`
 	Log                        PoolLog        `json:"log"`
 	Pool_stats                 PoolStats      `json:"pool_stats"`
-	Vc_spec_file_id            int            `json:"vc_spec_file_id "`
-	Vc_resource_pool_id        int            `json:"vc_resource_pool_id "`
-	Vc_datastore_id            int            `json:"vc_datastore_id "`
-	Read_only                  int            `json:"read_only "`
+	Vc_spec_file_id            int            `json:"vc_spec_file_id"`
+	Vc_resource_pool_id        int            `json:"vc_resource_pool_id"`
+	Vc_datastore_id            int            `json:"vc_datastore_id"`
+	Read_only                  int            `json:"read_only"`
 	Pool_type                  string         `json:"pool_type"`
 	Is_root                    int            `json:"is_root "`
 	Created                    string         `json:"created"`
@@ -98,28 +98,28 @@ type Pool struct {
 }
 
 type PoolDefinition struct {
-	Parent_pool_id          int            `json:"parent_pool_id "`
-	Restrict_by             string         `json:"restrict_by "`
+	Parent_pool_id          int            `json:"parent_pool_id"`
+	Restrict_by             string         `json:"restrict_by"`
 	Vm_tags                 []string       `json:"vm_tags"`
-	Vm_tags_join            string         `json:"vm_tags_join "`
-	Pool_attribute_join     string         `json:"pool_attribute_join "`
-	Adhoc_vms               []int          `json:"adhoc_vms "`
-	Adhoc_vc_hosts          []int          `json:"adhoc_vc_hosts "`
-	Adhoc_vc_clusters       []int          `json:"adhoc_vc_clusters "`
-	Adhoc_vc_resource_pools []int          `json:"adhoc_vc_resource_pools "`
-	Never_rogue             int            `json:"never_rogue "`
-	Server_ids              []int          `json:"server_ids "`
-	Use_vmotion             int            `json:"use_vmotion "`
-	Vm_server_distribution  int            `json:"vm_server_distribution "`
+	Vm_tags_join            string         `json:"vm_tags_join"`
+	Pool_attribute_join     string         `json:"pool_attribute_join"`
+	Adhoc_vms               []int          `json:"adhoc_vms"`
+	Adhoc_vc_hosts          []int          `json:"adhoc_vc_hosts"`
+	Adhoc_vc_clusters       []int          `json:"adhoc_vc_clusters"`
+	Adhoc_vc_resource_pools []int          `json:"adhoc_vc_resource_pools"`
+	Never_rogue             int            `json:"never_rogue"`
+	Server_ids              []int          `json:"server_ids"`
+	Use_vmotion             int            `json:"use_vmotion"`
+	Vm_server_distribution  int            `json:"vm_server_distribution"`
 	Attributes              PoolAttributes `json:"attributes"`
 }
 
 type PoolAttributes struct {
-	Vm_table_field     string `json:"vm_table_field "`
-	Ad_attribute_field string `json:"ad_attribute_field "`
-	Vm_gpu_field       string `json:"vm_gpu_field "`
-	Text_to_match      string `json:"text_to_match "`
-	Condition_type     string `json:"condition_type "`
+	Vm_table_field     string `json:"vm_table_field"`
+	Ad_attribute_field string `json:"ad_attribute_field"`
+	Vm_gpu_field       string `json:"vm_gpu_field"`
+	Text_to_match      string `json:"text_to_match"`
+	Condition_type     string `json:"condition_type"`
 }
 
 type PoolTimeLimits struct {
