@@ -79,6 +79,10 @@ type Pool struct {
 	Notes            string `json:"notes"`
 }
 
+type PoolsStored struct {
+	Stored_data PoolStored `json:"stored_data,omitempty"`
+}
+
 type PoolStored struct {
 	ID               int    `json:"id"`
 	Name             string `json:"name"`
