@@ -51,7 +51,7 @@ func (c *Client) GetPool(poolID string) (*Pool, error) {
 }
 
 // CreatePool - Create new pool
-func (c *Client) CreatePool(pool NewPool, authToken *string) (*PoolStored, error) {
+func (c *Client) CreatePool(pool NewPool, authToken *string) (*PoolsStored, error) {
 
 	rb, err := json.Marshal(pool)
 	if err != nil {
@@ -68,13 +68,13 @@ func (c *Client) CreatePool(pool NewPool, authToken *string) (*PoolStored, error
 		return nil, err
 	}
 
-	gw := PoolStored{}
-	err = json.Unmarshal(body, &gw)
+	pl := PoolsStored{}
+	err = json.Unmarshal(body, &pl)
 	if err != nil {
 		return nil, err
 	}
 
-	return &gw, nil
+	return &pl, nil
 }
 
 // UpdatePool - Updates an pool
