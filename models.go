@@ -77,24 +77,24 @@ type PoolProvision struct {
 
 // Pool -
 type Pool struct {
-	ID                         int            `json:"id"`
+	ID                         int            `json:"id,omitempty"`
 	Name                       string         `json:"name"`
 	Display_name               string         `json:"display_name"`
 	Notes                      string         `json:"notes"`
-	Running_desktops_threshold int            `json:"running_desktops_threshold"`
-	Pool_definition            PoolDefinition `json:"pool_definition"`
-	Provision                  PoolProvision  `json:"provision"`
-	Domain                     PoolDomain     `json:"domain"`
-	Log                        PoolLog        `json:"log"`
-	Pool_stats                 PoolStats      `json:"pool_stats"`
-	Vc_spec_file_id            int            `json:"vc_spec_file_id"`
-	Vc_resource_pool_id        int            `json:"vc_resource_pool_id"`
-	Vc_datastore_id            int            `json:"vc_datastore_id"`
-	Read_only                  int            `json:"read_only"`
-	Pool_type                  string         `json:"pool_type"`
-	Is_root                    int            `json:"is_root "`
-	Created                    string         `json:"created"`
-	Updated                    string         `json:"updated"`
+	Running_desktops_threshold int            `json:"running_desktops_threshold,omitempty"`
+	Pool_definition            PoolDefinition `json:"pool_definition,omitempty"`
+	Provision                  PoolProvision  `json:"provision,omitempty"`
+	Domain                     PoolDomain     `json:"domain,omitempty"`
+	Log                        PoolLog        `json:"log,omitempty"`
+	Pool_stats                 PoolStats      `json:"pool_stats,omitempty"`
+	Vc_spec_file_id            int            `json:"vc_spec_file_id,omitempty"`
+	Vc_resource_pool_id        int            `json:"vc_resource_pool_id,omitempty"`
+	Vc_datastore_id            int            `json:"vc_datastore_id,omitempty"`
+	Read_only                  int            `json:"read_only,omitempty"`
+	Pool_type                  string         `json:"pool_type,omitempty"`
+	Is_root                    int            `json:"is_root,omitempty"`
+	Created                    string         `json:"created,omitempty"`
+	Updated                    string         `json:"updated,omitempty"`
 }
 
 type PoolDefinition struct {
