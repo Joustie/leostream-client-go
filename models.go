@@ -173,15 +173,5 @@ type PoolStats struct {
 }
 
 type PoolsStored struct {
-	Stored_data PoolStored `json:"stored_data,omitempty"`
-}
-
-type PoolStored struct {
-	ID               int    `json:"id"`
-	Name             string `json:"name"`
-	Address          string `json:"address"`
-	Address_private  string `json:"address_private"`
-	Load_balancer_id int    `json:"load_balancer_id"`
-	Use_src_ip       int    `json:"use_src_ip"`
-	Notes            string `json:"notes"`
+	Stored_data Pool `json:"stored_data,omitempty"`
 }
