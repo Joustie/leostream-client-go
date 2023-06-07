@@ -59,9 +59,6 @@ func (c *Client) CreatePool(pool NewPool, authToken *string) (*PoolsStored, erro
 	}
 
 	req1, err1 := http.NewRequest("POST", fmt.Sprintf("%s/pools", "https://localhost"), strings.NewReader(string(rb)))
-	if err != nil {
-		return nil, err
-	}
 
 	body1, err1 := c.doRequest(req1, authToken)
 	_ = body1
