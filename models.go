@@ -53,8 +53,18 @@ type NewGateway struct {
 type NewPool struct {
 	Display_name    string           `json:"display_name"`
 	Name            string           `json:"name"`
-	// Pool_definition PoolDefinition 	 `json:"pool_definition,omitempty"`
-	// Provision       PoolProvision    `json:"provision,omitempty"`
+	Pool_definition NewPoolDefinition 	 `json:"pool_definition,omitempty"`
+	Provision       NewPoolProvision    `json:"provision,omitempty"`
+}
+
+type NewPoolDefinition struct {
+	Restrict_by             string         `json:"restrict_by"`
+	Never_rogue             int            `json:"never_rogue,omitempty"`
+	Server_ids              []int          `json:"server_ids,omitempty"`
+}
+
+type NewPoolProvision struct {
+	On_off             int              `json:"provision_on_off"`
 }
 
 type PoolProvision struct {
