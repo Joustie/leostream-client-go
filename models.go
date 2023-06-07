@@ -53,8 +53,8 @@ type NewGateway struct {
 type NewPool struct {
 	Display_name    string           `json:"display_name"`
 	Name            string           `json:"name"`
-	Pool_definition PoolDefinition 	 `json:"pool_definition,omitempty"`
-	Provision       PoolProvision    `json:"provision,omitempty"`
+	// Pool_definition PoolDefinition 	 `json:"pool_definition,omitempty"`
+	// Provision       PoolProvision    `json:"provision,omitempty"`
 }
 
 type PoolProvision struct {
