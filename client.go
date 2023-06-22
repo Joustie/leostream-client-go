@@ -8,10 +8,10 @@ import (
 	"time"
 )
 
-// HostURL - Default Hashicups URL
+// HostURL - Default Leostream URL
 const HostURL string = "http://localhost"
 
-// Client -
+// Client struct
 type Client struct {
 	HostURL    string
 	HTTPClient *http.Client
@@ -19,24 +19,24 @@ type Client struct {
 	Auth       AuthStruct
 }
 
-// AuthStruct -
+// AuthStruct struct	
 type AuthStruct struct {
 	Username string `json:"user_login"`
 	Password string `json:"password"`
 }
 
-// AuthResponse -
+// AuthResponse struct
 type AuthResponse struct {
 	UserID   int    `json:"user_id`
 	Username string `json:"username`
 	Token    string `json:"sid"`
 }
 
-// NewClient -
+// NewClient - Create new Leostream client
 func NewClient(host, username, password *string) (*Client, error) {
 
 	tr := &http.Transport{
-		TLSClientConfig: &tls.Config{InsecureSkipVerify: true},
+		Proxy: http.ProxyFromEnvironment,TLSClientConfig: &tls.Config{InsecureSkipVerify: true},
 	}
 
 	c := Client{
@@ -69,6 +69,7 @@ func NewClient(host, username, password *string) (*Client, error) {
 	return &c, nil
 }
 
+// perform a http request with an auth token
 func (c *Client) doRequest(req *http.Request, authToken *string) ([]byte, error) {
 	token := c.Token
 
