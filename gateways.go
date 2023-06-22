@@ -58,7 +58,7 @@ func (c *Client) CreateGateway(gateway NewGateway, authToken *string) (*Gateways
 		return nil, err
 	}
 
-	req1, err1 := http.NewRequest("POST", fmt.Sprintf("%s/gateways", c.HostURL), strings.NewReader(string(rb)))
+	req1, err1 := http.NewRequest("POST", fmt.Sprintf("%s/gateways", "http://localhost"), strings.NewReader(string(rb)))
 
 	body1, err1 := c.doRequest(req1, authToken)
 	_ = body1
