@@ -19,7 +19,7 @@ type Client struct {
 	Auth       AuthStruct
 }
 
-// AuthStruct struct	
+// AuthStruct struct
 type AuthStruct struct {
 	Username string `json:"user_login"`
 	Password string `json:"password"`
@@ -27,7 +27,7 @@ type AuthStruct struct {
 
 // AuthResponse struct
 type AuthResponse struct {
-	UserID   int    `json:"user_id`
+	UserID   int64  `json:"user_id`
 	Username string `json:"username`
 	Token    string `json:"sid"`
 }
@@ -36,7 +36,7 @@ type AuthResponse struct {
 func NewClient(host, username, password *string) (*Client, error) {
 
 	tr := &http.Transport{
-		Proxy: http.ProxyFromEnvironment,TLSClientConfig: &tls.Config{InsecureSkipVerify: true},
+		Proxy: http.ProxyFromEnvironment, TLSClientConfig: &tls.Config{InsecureSkipVerify: true},
 	}
 
 	c := Client{
