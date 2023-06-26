@@ -104,7 +104,7 @@ type Pool struct {
 	Is_root                    int            `json:"is_root,omitempty"`
 	Created                    string         `json:"created,omitempty"`
 	Updated                    string         `json:"updated,omitempty"`
-	Pool_definition            PoolDefinition `json:"pool_definition,omitempty"`
+	//Pool_definition            PoolDefinition `json:"pool_definition,omitempty"`
 }
 
 type PoolDefinition struct {
