@@ -92,7 +92,6 @@ type Pool struct {
 	Display_name               string         `json:"display_name"`
 	Notes                      string         `json:"notes"`
 	Running_desktops_threshold int            `json:"running_desktops_threshold,omitempty"`
-	Pool_definition            PoolDefinition `json:"pool_definition,omitempty"`
 	Provision                  PoolProvision  `json:"provision,omitempty"`
 	Domain                     PoolDomain     `json:"domain,omitempty"`
 	Log                        PoolLog        `json:"log,omitempty"`
@@ -105,6 +104,7 @@ type Pool struct {
 	Is_root                    int            `json:"is_root,omitempty"`
 	Created                    string         `json:"created,omitempty"`
 	Updated                    string         `json:"updated,omitempty"`
+	Pool_definition            PoolDefinition `json:"pool_definition,omitempty"`
 }
 
 type PoolDefinition struct {
