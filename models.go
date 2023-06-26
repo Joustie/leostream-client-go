@@ -60,7 +60,7 @@ type NewPool struct {
 type NewPoolDefinition struct {
 	Restrict_by string `json:"restrict_by"`
 	Never_rogue int64  `json:"never_rogue,omitempty"`
-	Server_ids  []int  `json:"server_ids,omitempty"`
+	Server_ids  []int64  `json:"server_ids,omitempty"`
 }
 
 type NewPoolProvision struct {
