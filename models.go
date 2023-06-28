@@ -65,6 +65,7 @@ type NewPoolDefinition struct {
 
 type NewPoolProvision struct {
 	On_off int64 `json:"provision_on_off"`
+	Threshold int64 `json:"provision_threshold,omitempty"`
 }
 
 type PoolProvision struct {
