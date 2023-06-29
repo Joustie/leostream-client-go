@@ -9,7 +9,7 @@ import (
 )
 
 // GetPools - Returns list of pools (no auth required)
-func (c *Client) GetPools() ([]NewPool, error) {
+func (c *Client) GetPools() ([]Pool, error) {
 	req, err := http.NewRequest("GET", fmt.Sprintf("%s/pools", c.HostURL), nil)
 	if err != nil {
 		return nil, err
@@ -20,7 +20,7 @@ func (c *Client) GetPools() ([]NewPool, error) {
 		return nil, err
 	}
 
-	pools := []NewPool{}
+	pools := []Pool{}
 	err = json.Unmarshal(body, &pools)
 	if err != nil {
 		return nil, err
@@ -51,7 +51,7 @@ func (c *Client) GetPool(poolID string) (*PoolsStored, error) {
 }
 
 // CreatePool - Create new pool
-func (c *Client) CreatePool(pool NewPool, authToken *string) (*PoolsStored, error) {
+func (c *Client) CreatePool(pool Pool, authToken *string) (*PoolsStored, error) {
 
 	rb, err := json.Marshal(pool)
 	if err != nil {
@@ -84,7 +84,7 @@ func (c *Client) CreatePool(pool NewPool, authToken *string) (*PoolsStored, erro
 }
 
 // UpdatePool - Updates an pool
-func (c *Client) UpdatePool(poolID string, pool NewPool, authToken *string) (*PoolsStored, error) {
+func (c *Client) UpdatePool(poolID string, pool Pool, authToken *string) (*PoolsStored, error) {
 	rb, err := json.Marshal(pool)
 	if err != nil {
 		return nil, err
