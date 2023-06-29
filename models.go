@@ -96,12 +96,12 @@ type PoolDefinition struct {
 	Vm_tags                 []string       `json:"vm_tags,omitempty"`
 	Vm_tags_join            string         `json:"vm_tags_join,omitempty"`
 	Pool_attribute_join     string         `json:"pool_attribute_join,omitempty"`
-	Adhoc_vms               []int          `json:"adhoc_vms,omitempty"`
-	Adhoc_vc_hosts          []int          `json:"adhoc_vc_hosts,omitempty"`
-	Adhoc_vc_clusters       []int          `json:"adhoc_vc_clusters,omitempty"`
-	Adhoc_vc_resource_pools []int          `json:"adhoc_vc_resource_pools,omitempty"`
+	Adhoc_vms               []int64          `json:"adhoc_vms,omitempty"`
+	Adhoc_vc_hosts          []int64          `json:"adhoc_vc_hosts,omitempty"`
+	Adhoc_vc_clusters       []int64          `json:"adhoc_vc_clusters,omitempty"`
+	Adhoc_vc_resource_pools []int64          `json:"adhoc_vc_resource_pools,omitempty"`
 	Never_rogue             int64          `json:"never_rogue,omitempty"`
-	Server_ids              []int          `json:"server_ids,omitempty"`
+	Server_ids              []int64          `json:"server_ids,omitempty"`
 	Use_vmotion             int64          `json:"use_vmotion,omitempty"`
 	Vm_server_distribution  int64          `json:"vm_server_distribution,omitempty"`
 	Attributes              PoolAttributes `json:"attributes,omitempty"`
