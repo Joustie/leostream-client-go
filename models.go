@@ -86,7 +86,7 @@ type PoolProvision struct {
 }
 
 // Pool -
-type Pool struct {
+type PoolConfiguration struct {
 	ID                         int64         `json:"id,omitempty"`
 	Name                       string        `json:"name"`
 	Display_name               string        `json:"display_name"`
@@ -104,7 +104,7 @@ type Pool struct {
 	Is_root                    int64         `json:"is_root,omitempty"`
 	Created                    string        `json:"created,omitempty"`
 	Updated                    string        `json:"updated,omitempty"`
-	//Pool_definition            PoolDefinition `json:"pool_definition,omitempty"`
+	Pool_definition            PoolDefinition `json:"pool_definition,omitempty"`
 }
 
 type PoolDefinition struct {
@@ -183,5 +183,5 @@ type PoolStats struct {
 }
 
 type PoolsStored struct {
-	Stored_data Pool `json:"stored_data,omitempty"`
+	Stored_data NewPool `json:"stored_data,omitempty"`
 }

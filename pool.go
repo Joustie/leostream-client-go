@@ -9,7 +9,7 @@ import (
 )
 
 // GetPools - Returns list of pools (no auth required)
-func (c *Client) GetPools() ([]Pool, error) {
+func (c *Client) GetPools() ([]NewPool, error) {
 	req, err := http.NewRequest("GET", fmt.Sprintf("%s/pools", c.HostURL), nil)
 	if err != nil {
 		return nil, err
@@ -20,7 +20,7 @@ func (c *Client) GetPools() ([]Pool, error) {
 		return nil, err
 	}
 
-	pools := []Pool{}
+	pools := []NewPool{}
 	err = json.Unmarshal(body, &pools)
 	if err != nil {
 		return nil, err
