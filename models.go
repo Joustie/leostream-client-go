@@ -51,6 +51,7 @@ type NewGateway struct {
 }
 
 type NewPool struct {
+	ID              int64         `json:"id,omitempty"`
 	Display_name    string            `json:"display_name"`
 	Name            string            `json:"name"`
 	Pool_definition NewPoolDefinition `json:"pool_definition,omitempty"`
