@@ -50,24 +50,6 @@ type NewGateway struct {
 	Notes            string `json:"notes"`
 }
 
-type NewPool struct {
-	ID              int64         `json:"id,omitempty"`
-	Display_name    string            `json:"display_name"`
-	Name            string            `json:"name"`
-	Pool_definition NewPoolDefinition `json:"pool_definition,omitempty"`
-	Provision       NewPoolProvision  `json:"provision,omitempty"`
-}
-
-type NewPoolDefinition struct {
-	Restrict_by string `json:"restrict_by"`
-	Never_rogue int64  `json:"never_rogue,omitempty"`
-	Server_ids  []int64  `json:"server_ids,omitempty"`
-}
-
-type NewPoolProvision struct {
-	On_off int64 `json:"provision_on_off"`
-}
-
 type PoolProvision struct {
 	On_off             int64            `json:"provision_on_off"`
 	Tenant_id          int64            `json:"provision_tenant_id,omitempty"`
@@ -87,7 +69,7 @@ type PoolProvision struct {
 }
 
 // Pool -
-type PoolConfiguration struct {
+type Pool struct {
 	ID                         int64         `json:"id,omitempty"`
 	Name                       string        `json:"name"`
 	Display_name               string        `json:"display_name"`
@@ -184,5 +166,5 @@ type PoolStats struct {
 }
 
 type PoolsStored struct {
-	Stored_data NewPool `json:"stored_data,omitempty"`
+	Stored_data Pool `json:"stored_data,omitempty"`
 }
