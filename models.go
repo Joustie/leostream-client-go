@@ -65,7 +65,7 @@ type PoolProvision struct {
 	Mark_deleteable    int64            `json:"mark_deleteable,omitempty"`
 	Mark_unavailable   int64            `json:"mark_unavailable,omitempty"`
 	Time_limits        []PoolTimeLimits `json:"time_limits,omitempty"`
-	Center             []Center           `json:"center,omitempty"`
+	Center             Center           `json:"center,omitempty"`
 }
 
 // Pool -
