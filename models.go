@@ -104,7 +104,7 @@ type PoolDefinition struct {
 	Server_ids              []int64          `json:"server_ids,omitempty"`
 	Use_vmotion             int64          `json:"use_vmotion,omitempty"`
 	Vm_server_distribution  int64          `json:"vm_server_distribution,omitempty"`
-	Attributes              PoolAttributes `json:"attributes,omitempty"`
+	Attributes              []PoolAttributes `json:"attributes,omitempty"`
 }
 
 type PoolAttributes struct {
