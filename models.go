@@ -2,15 +2,15 @@ package leostream
 
 // Center -
 type Center struct {
-	ID           int64  `json:"id"`
-	Name         string `json:"name"`
-	Os           string `json:"os"`
-	Flavor       string `json:"flavor"`
-	Online       int64  `json:"online"`
-	Status       int64  `json:"status"`
-	Status_label string `json:"status_label"`
-	Center_type  string `json:"type"`
-	Type_label   string `json:"type_label"`
+	ID           int64  `json:"id,omitempty""`
+	Name         string `json:"name,omitempty""`
+	Os           string `json:"os,omitempty""`
+	Flavor       string `json:"flavor,omitempty""`
+	Online       int64  `json:"online,omitempty""`
+	Status       int64  `json:"status,omitempty""`
+	Status_label string `json:"status_label,omitempty""`
+	Center_type  string `json:"type,omitempty""`
+	Type_label   string `json:"type_label,omitempty""`
 }
 
 // Gateway -
