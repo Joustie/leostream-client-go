@@ -1,6 +1,5 @@
 package leostream
 
-import "go/types"
 
 // Center -
 type Center struct {
