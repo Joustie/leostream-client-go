@@ -67,7 +67,7 @@ type PoolProvision struct {
 	Mark_deleteable    int64            `json:"mark_deleteable,omitempty"`
 	Mark_unavailable   int64            `json:"mark_unavailable,omitempty"`
 	Time_limits        []PoolTimeLimits `json:"time_limits,omitempty"`
-	Center             types.Object     `json:"center,omitempty"`
+	Center             PoolAwsCenter    `json:"center,omitempty"`
 }
 
 type PoolAwsCenter struct {
@@ -90,7 +90,7 @@ type Pool struct {
 	Notes                      string         `json:"notes,omitempty"`
 	Running_desktops_threshold int64          `json:"running_desktops_threshold,omitempty"`
 	Provision                  PoolProvision  `json:"provision,omitempty"`
-	Domain                     types.Object   `json:"domain,omitempty"`
+	Domain                     PoolDomain     `json:"domain,omitempty"`
 	Log                        PoolLog        `json:"log,omitempty"`
 	Pool_stats                 PoolStats      `json:"pool_stats,omitempty"`
 	Vc_spec_file_id            int64          `json:"vc_spec_file_id,omitempty"`
