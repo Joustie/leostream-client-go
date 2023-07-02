@@ -2,15 +2,15 @@ package leostream
 
 // Center -
 type Center struct {
-	ID           int64  `json:"id,omitempty""`
-	Name         string `json:"name,omitempty""`
-	Os           string `json:"os,omitempty""`
-	Flavor       string `json:"flavor,omitempty""`
-	Online       int64  `json:"online,omitempty""`
-	Status       int64  `json:"status,omitempty""`
-	Status_label string `json:"status_label,omitempty""`
-	Center_type  string `json:"type,omitempty""`
-	Type_label   string `json:"type_label,omitempty""`
+	ID           int64  `json:"id,omitempty"`
+	Name         string `json:"name,omitempty"`
+	Os           string `json:"os,omitempty"`
+	Flavor       string `json:"flavor,omitempty"`
+	Online       int64  `json:"online,omitempty"`
+	Status       int64  `json:"status,omitempty"`
+	Status_label string `json:"status_label,omitempty"`
+	Center_type  string `json:"type,omitempty"`
+	Type_label   string `json:"type_label,omitempty"`
 }
 
 // Gateway -
@@ -51,7 +51,7 @@ type NewGateway struct {
 }
 
 type PoolProvision struct {
-	On_off             int64            `json:"provision_on_off"`
+	On_off             int64            `json:"provision_on_off,omitempty"`
 	Tenant_id          int64            `json:"provision_tenant_id,omitempty"`
 	Threshold          int64            `json:"provision_threshold,omitempty"`
 	Vm_id              int64            `json:"provision_vm_id,omitempty"`
@@ -84,8 +84,8 @@ type PoolAwsCenter struct {
 type Pool struct {
 	ID                         int64          `json:"id,omitempty"`
 	Name                       string         `json:"name"`
-	Display_name               string         `json:"display_name"`
-	Notes                      string         `json:"notes"`
+	Display_name               string         `json:"display_name,omitempty"`
+	Notes                      string         `json:"notes,omitempty"`
 	Running_desktops_threshold int64          `json:"running_desktops_threshold,omitempty"`
 	Provision                  PoolProvision  `json:"provision,omitempty"`
 	Domain                     PoolDomain     `json:"domain,omitempty"`
