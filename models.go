@@ -1,5 +1,7 @@
 package leostream
 
+import "go/types"
+
 // Center -
 type Center struct {
 	ID           int64  `json:"id,omitempty"`
@@ -88,7 +90,7 @@ type Pool struct {
 	Notes                      string         `json:"notes,omitempty"`
 	Running_desktops_threshold int64          `json:"running_desktops_threshold,omitempty"`
 	Provision                  PoolProvision  `json:"provision,omitempty"`
-	Domain                     PoolDomain     `json:"domain,omitempty"`
+	Domain                     types.Object   `json:"domain,omitempty"`
 	Log                        PoolLog        `json:"log,omitempty"`
 	Pool_stats                 PoolStats      `json:"pool_stats,omitempty"`
 	Vc_spec_file_id            int64          `json:"vc_spec_file_id,omitempty"`
