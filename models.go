@@ -88,23 +88,10 @@ type Pool struct {
 	Display_name               string         `json:"display_name,omitempty"`
 	Notes                      string         `json:"notes,omitempty"`
 	Running_desktops_threshold int64          `json:"running_desktops_threshold,omitempty"`
-	Provision                  PoolProvision  `json:"provision,omitempty"`
-	Domain                     PoolDomain     `json:"domain,omitempty"`
-	Log                        PoolLog        `json:"log,omitempty"`
-	Pool_stats                 PoolStats      `json:"pool_stats,omitempty"`
-	Vc_spec_file_id            int64          `json:"vc_spec_file_id,omitempty"`
-	Vc_resource_pool_id        int64          `json:"vc_resource_pool_id,omitempty"`
-	Vc_datastore_id            int64          `json:"vc_datastore_id,omitempty"`
-	Read_only                  int64          `json:"read_only,omitempty"`
-	Pool_type                  string         `json:"pool_type,omitempty"`
-	Is_root                    int64          `json:"is_root,omitempty"`
-	Created                    string         `json:"created,omitempty"`
-	Updated                    string         `json:"updated,omitempty"`
 	Pool_definition            PoolDefinition `json:"pool_definition,omitempty"`
 }
 
 type PoolDefinition struct {
-	Parent_pool_id          int64            `json:"parent_pool_id,omitempty"`
 	Restrict_by             string           `json:"restrict_by"`
 	Vm_tags                 []string         `json:"vm_tags,omitempty"`
 	Vm_tags_join            string           `json:"vm_tags_join,omitempty"`
