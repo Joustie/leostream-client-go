@@ -30,7 +30,7 @@ func (c *Client) GetPools() ([]Pool, error) {
 }
 
 // GetPool - Returns a specific pool
-func (c *Client) GetPool(poolID string) (*PoolsStored, error) {
+func (c *Client) GetPool(poolID string) (*Pool, error) {
 	req, err := http.NewRequest("GET", fmt.Sprintf("%s/pools/%s", c.HostURL, poolID), nil)
 	if err != nil {
 		return nil, err
@@ -41,7 +41,7 @@ func (c *Client) GetPool(poolID string) (*PoolsStored, error) {
 		return nil, err
 	}
 
-	pool := PoolsStored{}
+	pool := Pool{}
 	err = json.Unmarshal(body, &pool)
 	if err != nil {
 		return nil, err
