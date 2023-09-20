@@ -92,7 +92,7 @@ type Pool struct {
 }
 
 type PoolDefinition struct {
-	Restrict_by             string           `json:"restrict_by"`
+	Restrict_by             string           `json:"restrict_by,omitempty"`
 	// Vm_tags                 []string         `json:"vm_tags,omitempty"`
 	// Vm_tags_join            string           `json:"vm_tags_join,omitempty"`
 	// Pool_attribute_join     string           `json:"pool_attribute_join,omitempty"`
