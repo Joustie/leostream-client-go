@@ -102,7 +102,7 @@ type PoolDefinition struct {
 	// Adhoc_vc_resource_pools []int64          `json:"adhoc_vc_resource_pools,omitempty"`
 	Never_rogue             int64            `json:"never_rogue,omitempty"`
 	Server_ids              []int64          `json:"server_ids,omitempty"`
-	// Use_vmotion             int64            `json:"use_vmotion,omitempty"`
+	Use_vmotion             int64            `json:"use_vmotion,omitempty"`
 	// Vm_server_distribution  int64            `json:"vm_server_distribution,omitempty"`
 	// Attributes              []PoolAttributes `json:"attributes,omitempty"`
 }
