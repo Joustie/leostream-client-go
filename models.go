@@ -51,22 +51,22 @@ type NewGateway struct {
 	Notes            string `json:"notes"`
 }
 
-type PoolProvision struct {
-	On_off             int64            `json:"provision_on_off,omitempty"`
-	Tenant_id          int64            `json:"provision_tenant_id,omitempty"`
-	Threshold          int64            `json:"provision_threshold,omitempty"`
-	Vm_id              int64            `json:"provision_vm_id,omitempty"`
-	Vm_name            string           `json:"provision_vm_name,omitempty"`
-	Vm_name_next_value int64            `json:"provision_vm_name_next_value,omitempty"`
-	Vm_display_name    string           `json:"provision_vm_display_name,omitempty"`
-	Url                string           `json:"provision_url,omitempty"`
-	Server_id          int64            `json:"provision_server_id,omitempty"`
-	Max                int64            `json:"provision_max,omitempty"`
-	Limits_enforce     int64            `json:"provision_limits_enforce,omitempty"`
-	Mark_deleteable    int64            `json:"mark_deleteable,omitempty"`
-	Mark_unavailable   int64            `json:"mark_unavailable,omitempty"`
-	Time_limits        []PoolTimeLimits `json:"time_limits,omitempty"`
-	Center             PoolAwsCenter    `json:"center,omitempty"`
+type Provision struct {
+	Provision_on_off             int64            `json:"provision_on_off,omitempty"`
+	Provision_tenant_id          int64            `json:"provision_tenant_id,omitempty"`
+	Provision_threshold          int64            `json:"provision_threshold,omitempty"`
+	Provision_vm_id              int64            `json:"provision_vm_id,omitempty"`
+	Provision_vm_name            string           `json:"provision_vm_name,omitempty"`
+	Provision_vm_name_next_value int64            `json:"provision_vm_name_next_value,omitempty"`
+	Provision_vm_display_name    string           `json:"provision_vm_display_name,omitempty"`
+	Provision_url                string           `json:"provision_url,omitempty"`
+	Provision_server_id          int64            `json:"provision_server_id,omitempty"`
+	Provision_max                int64            `json:"provision_max,omitempty"`
+	Provision_limits_enforce     int64            `json:"provision_limits_enforce,omitempty"`
+	Mark_deleteable    			 int64            `json:"mark_deleteable,omitempty"`
+	Mark_unavailable   			 int64            `json:"mark_unavailable,omitempty"`
+	Time_limits        			 []PoolTimeLimits `json:"time_limits,omitempty"`
+	Center             			 PoolAwsCenter    `json:"center,omitempty"`
 }
 
 type PoolAwsCenter struct {
