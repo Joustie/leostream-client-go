@@ -89,6 +89,7 @@ type Pool struct {
 	Notes                      string         `json:"notes,omitempty"`
 	Running_desktops_threshold int64          `json:"running_desktops_threshold,omitempty"`
 	Pool_definition            PoolDefinition `json:"pool_definition,omitempty"`
+	Provision	               Provision 	  `json:"provision,omitempty"`
 }
 
 type PoolDefinition struct {
