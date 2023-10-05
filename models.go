@@ -52,16 +52,16 @@ type NewGateway struct {
 }
 
 type Provision struct {
-	Provision_on_off             int64            `json:"provision_on_off,omitempty"`
-	Provision_tenant_id          int64            `json:"provision_tenant_id,omitempty"`
-	Provision_threshold          int64            `json:"provision_threshold,omitempty"`
-	Provision_vm_id              int64            `json:"provision_vm_id,omitempty"`
+	Provision_on_off             int64            `json:"provision_on_off"`
+	Provision_tenant_id          int64            `json:"provision_tenant_id"`
+	Provision_threshold          int64            `json:"provision_threshold"`
+	Provision_vm_id              int64            `json:"provision_vm_id"`
 	Provision_vm_name            string           `json:"provision_vm_name,omitempty"`
 	Provision_vm_name_next_value int64            `json:"provision_vm_name_next_value,omitempty"`
 	Provision_vm_display_name    string           `json:"provision_vm_display_name,omitempty"`
 	Provision_url                string           `json:"provision_url,omitempty"`
 	Provision_server_id          int64            `json:"provision_server_id,omitempty"`
-	Provision_max                int64            `json:"provision_max,omitempty"`
+	Provision_max                int64            `json:"provision_max"`
 	Provision_limits_enforce     int64            `json:"provision_limits_enforce,omitempty"`
 	Mark_deleteable    			 int64            `json:"mark_deleteable,omitempty"`
 	Mark_unavailable   			 int64            `json:"mark_unavailable,omitempty"`
@@ -101,7 +101,7 @@ type PoolDefinition struct {
 	// Adhoc_vc_hosts          []int64          `json:"adhoc_vc_hosts,omitempty"`
 	// Adhoc_vc_clusters       []int64          `json:"adhoc_vc_clusters,omitempty"`
 	// Adhoc_vc_resource_pools []int64          `json:"adhoc_vc_resource_pools,omitempty"`
-	Never_rogue             int64            `json:"never_rogue,omitempty"`
+	Never_rogue             int64            `json:"never_rogue"`
 	Server_ids              []int64          `json:"server_ids,omitempty"`
 	Use_vmotion             int64            `json:"use_vmotion"`
 	// Vm_server_distribution  int64            `json:"vm_server_distribution,omitempty"`
