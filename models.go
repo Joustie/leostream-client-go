@@ -53,9 +53,9 @@ type NewGateway struct {
 
 type Provision struct {
 	Provision_on_off             int64            `json:"provision_on_off"`
-	Provision_tenant_id          int64            `json:"provision_tenant_id"`
+	Provision_tenant_id          int64            `json:"provision_tenant_id,omitempty"`
 	Provision_threshold          int64            `json:"provision_threshold"`
-	Provision_vm_id              int64            `json:"provision_vm_id"`
+	Provision_vm_id              int64            `json:"provision_vm_id,omitempty"`
 	Provision_vm_name            string           `json:"provision_vm_name,omitempty"`
 	Provision_vm_name_next_value int64            `json:"provision_vm_name_next_value,omitempty"`
 	Provision_vm_display_name    string           `json:"provision_vm_display_name,omitempty"`
@@ -66,7 +66,7 @@ type Provision struct {
 	Mark_deleteable    			 int64            `json:"mark_deleteable,omitempty"`
 	Mark_unavailable   			 int64            `json:"mark_unavailable,omitempty"`
 	Time_limits        			 []PoolTimeLimits `json:"time_limits,omitempty"`
-	//Center             			 PoolAwsCenter    `json:"center,omitempty"`
+	Center             			 PoolAwsCenter    `json:"center,omitempty"`
 }
 
 type PoolAwsCenter struct {
@@ -74,7 +74,7 @@ type PoolAwsCenter struct {
 	Name             string `json:"name,omitempty"`
 	Type             string `json:"type,omitempty"`
 	Aws_size         string `json:"aws_size,omitempty"`
-	aws_t2_unlimited int64  `json:"aws_t2_unlimited,omitempty"`
+	aws_t2_unlimited int64  `json:"aws_t2_unlimited"`
 	aws_iam_name     string `json:"aws_iam_name,omitempty"`
 	aws_sub_net      string `json:"aws_sub_net,omitempty"`
 	aws_sec_group    string `json:"aws_sec_group,omitempty"`
