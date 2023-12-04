@@ -9,7 +9,7 @@ import (
 )
 
 // GetPoolassignments - Returns list of pool-assignments (no auth required)
-func (c *Client) GetPoolAssignments(policyID string) ([]Policy, error) {
+func (c *Client) GetPoolAssignments(policyID string) ([]PoolAssignmentSummary, error) {
 	req, err := http.NewRequest("GET", fmt.Sprintf("%s/policies/%s/pool-assignments", c.HostURL, policyID), nil)
 	if err != nil {
 		return nil, err
@@ -20,13 +20,13 @@ func (c *Client) GetPoolAssignments(policyID string) ([]Policy, error) {
 		return nil, err
 	}
 
-	poolassignments := []Policy{}
-	err = json.Unmarshal(body, &poolassignments)
+	poolassignmentsummary := []PoolAssignmentSummary{}
+	err = json.Unmarshal(body, &poolassignmentsummary)
 	if err != nil {
 		return nil, err
 	}
 
-	return poolassignments, nil
+	return poolassignmentsummary, nil
 }
 
 // GetPolicy - Returns a specific policy

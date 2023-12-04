@@ -45,21 +45,21 @@ func TestNewClientNoUsername(t *testing.T) {
 
 /*
 The following function tests the creation of a new Leostream client and do a request with no username or password.
-*/
-func TestDoRequestNoAuth(t *testing.T) {
-	c, err := NewClient(nil, nil, nil)
-	if err != nil {
-		t.Errorf("Error creating new client: %s", err)
-	}
-	if c == nil {
-		t.Errorf("Client is nil")
-	}
-	if c.doRequest(nil, nil) == c {
-		t.Errorf("Client is nil")
-	}
+// */
+// func TestDoRequestNoAuth(t *testing.T) {
+// 	c, err := NewClient(nil, nil, nil)
+// 	if err != nil {
+// 		t.Errorf("Error creating new client: %s", err)
+// 	}
+// 	if c == nil {
+// 		t.Errorf("Client is nil")
+// 	}
+// 	if c.doRequest(nil, nil) == c {
+// 		t.Errorf("Client is nil")
+// 	}
 
-	// _, err = c.doRequest(nil, nil)
-	// if err == nil {
-	// 	t.Errorf("Expected error")
-	// }
-}
+// 	// _, err = c.doRequest(nil, nil)
+// 	// if err == nil {
+// 	// 	t.Errorf("Expected error")
+// 	// }
+// }

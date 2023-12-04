@@ -201,7 +201,13 @@ type PoliciesStored struct {
 }
 
 
-// PoolAssignment -
+// PoolAssignmentSummary -	
+type PoolAssignmentSummary struct {
+	ID           int64  `json:"id,omitempty"`
+	Pool_name         string `json:"pool_name,omitempty"`
+	Pool_id   		int64  `json:"pool_id,omitempty"`
+}
+
 
 // PoolAssignment -
 type PoolAssignment struct {
