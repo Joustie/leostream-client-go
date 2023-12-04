@@ -229,7 +229,7 @@ type PoolAssignmentFilters struct {
 
 type Filters struct {
 	Offer_filter_attribute	string `json:"offer_filter_attribute,omitempty"`
-	Offer_filter_json	string `json:"offer_filter_json,omitempty"`
+	Offer_filter_condition	string `json:"offer_filter_condition,omitempty"`
 	Offer_filter_value	string `json:"offer_filter_value,omitempty"`
 }
 
