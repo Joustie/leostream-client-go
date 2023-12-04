@@ -10,7 +10,7 @@ import (
 
 // GetPoolassignments - Returns list of pool-assignments (no auth required)
 func (c *Client) GetPoolAssignments(policyID string) ([]Policy, error) {
-	req, err := http.NewRequest("GET", fmt.Sprintf("%s/%s/pool-assignments", c.HostURL, policyID), nil)
+	req, err := http.NewRequest("GET", fmt.Sprintf("%s/policies/%s/pool-assignments", c.HostURL, policyID), nil)
 	if err != nil {
 		return nil, err
 	}
@@ -31,7 +31,7 @@ func (c *Client) GetPoolAssignments(policyID string) ([]Policy, error) {
 
 // GetPolicy - Returns a specific policy
 func (c *Client) GetPoolAssignment(policyID string, poolAssignmentID string) (*PoolAssignment, error) {
-	req, err := http.NewRequest("GET", fmt.Sprintf("%s/%s/pool-assignments/%s", c.HostURL, policyID, poolAssignmentID), nil)
+	req, err := http.NewRequest("GET", fmt.Sprintf("%s/policies/%s/pool-assignments/%s", c.HostURL, policyID, poolAssignmentID), nil)
 	if err != nil {
 		return nil, err
 	}
@@ -58,13 +58,13 @@ func (c *Client) CreatePoolAssignment(poolassignment PoolAssignment, policyID in
 		return nil, err
 	}
 
-	req1, err1 := http.NewRequest("POST", fmt.Sprintf("%s/%s/pool-assignments", "http://localhost", policyID), strings.NewReader(string(rb)))
+	req1, err1 := http.NewRequest("POST", fmt.Sprintf("%s/policies/%s/pool-assignments", "http://localhost", policyID), strings.NewReader(string(rb)))
 
 	body1, err1 := c.doRequest(req1, authToken)
 	_ = body1
 	_ = err1
 
-	req, err := http.NewRequest("POST", fmt.Sprintf("%s/pool-assignments", c.HostURL, policyID), strings.NewReader(string(rb)))
+	req, err := http.NewRequest("POST", fmt.Sprintf("%s/policies/pool-assignments", c.HostURL, policyID), strings.NewReader(string(rb)))
 	if err != nil {
 		return nil, err
 	}
@@ -90,13 +90,13 @@ func (c *Client) UpdatePoolAssignment(poolassignementID string, poolassignment P
 		return nil, err
 	}
 
-	req1, err1 := http.NewRequest("PUT", fmt.Sprintf("%s/%s/pool-assignments/%s", "http://localhost", policyID, poolassignementID), strings.NewReader(string(rb)))
+	req1, err1 := http.NewRequest("PUT", fmt.Sprintf("%s/policies/%s/pool-assignments/%s", "http://localhost", policyID, poolassignementID), strings.NewReader(string(rb)))
 
 	body1, err1 := c.doRequest(req1, authToken)
 	_ = body1
 	_ = err1
 
-	req, err := http.NewRequest("PUT", fmt.Sprintf("%s/%s/pool-assignments/%s", c.HostURL, policyID, poolassignementID), strings.NewReader(string(rb)))
+	req, err := http.NewRequest("PUT", fmt.Sprintf("%s/policies/%s/pool-assignments/%s", c.HostURL, policyID, poolassignementID), strings.NewReader(string(rb)))
 	if err != nil {
 		return nil, err
 	}
@@ -117,12 +117,12 @@ func (c *Client) UpdatePoolAssignment(poolassignementID string, poolassignment P
 
 // DeletePoolAssignment- Deletes a pool assignment
 func (c *Client) DeletePoolAssignment(poolassignementID string, policyID int, authToken *string) error {
-	req, err := http.NewRequest("DELETE", fmt.Sprintf("%s/%s/pool-assignments/%s", c.HostURL, policyID, poolassignementID), nil)
+	req, err := http.NewRequest("DELETE", fmt.Sprintf("%s/policies/%s/pool-assignments/%s", c.HostURL, policyID, poolassignementID), nil)
 	if err != nil {
 		return err
 	}
 
-	req1, err1 := http.NewRequest("DELETE", fmt.Sprintf("%s/%s/pool-assignments/%s", "http://localhost", policyID, poolassignementID), nil)
+	req1, err1 := http.NewRequest("DELETE", fmt.Sprintf("%s/policies/%s/pool-assignments/%s", "http://localhost", policyID, poolassignementID), nil)
 	body1, err1 := c.doRequest(req1, authToken)
 	_ = body1
 	_ = err1
