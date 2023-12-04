@@ -192,11 +192,25 @@ type PoolsStored struct {
 type Policy struct {
 	ID                         int64          `json:"id,omitempty"`
 	Name                       string         `json:"name"`
-	Display_name               string         `json:"display_name,omitempty"`
 	Notes                      string         `json:"notes,omitempty"`
-
+	
 }
 
 type PoliciesStored struct {
+	Stored_data Policy `json:"stored_data,omitempty"`
+}
+
+
+// PoolAssignment -
+
+// PoolAssignment -
+type PoolAssignment struct {
+	ID           int64  `json:"id,omitempty"`
+	Pool_name         string `json:"pool_name,omitempty"`
+	Pool_id   		int64  `json:"pool_id,omitempty"`
+	Policy_id  		int64  `json:"policy_id,omitempty"`
+}
+
+type PoolAssignmentssStored struct {
 	Stored_data Policy `json:"stored_data,omitempty"`
 }
