@@ -224,7 +224,7 @@ type PoolAssignment struct {
 
 type PoolAssignmentFilters struct {
 	Filters []Filters `json:"filters,omitempty"`
-	Join int64 `json:"join,omitempty"`
+	Join string `json:"join,omitempty"`
 }
 
 type Filters struct {
