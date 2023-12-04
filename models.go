@@ -212,16 +212,14 @@ type PoolAssignmentSummary struct {
 // PoolAssignment -
 type PoolAssignment struct {
 	ID           int64  `json:"id,omitempty"`
-	//Pool_name         string `json:"pool_name,omitempty"`
 	Pool_id   		int64  `json:"pool_id,omitempty"`
 	Policy_id  		int64  `json:"policy_id,omitempty"`
-	// //offer_filter	string `json:"offer_filter,omitempty"`
-	// //offer_filter_json	string `json:"offer_filter_json,omitempty"`
+	Offer_filter	string `json:"offer_filter,omitempty"`
+	Offer_filter_json	string `json:"offer_filter_json,omitempty"`
 	Plan_protocol_id	int64  `json:"plan_protocol_id,omitempty"`
-	// plan_power_control_id	int64  `json:"plan_power_control_id,omitempty"`
-	// plan_release_id	int64  `json:"plan_release_id,omitempty"`
-	// offer_quantity	int64  `json:"offer_quantity,omitempty"`
-
+	Plan_power_control_id	int64  `json:"plan_power_control_id,omitempty"`
+	Plan_release_id	int64  `json:"plan_release_id,omitempty"`
+	Offer_quantity	int64  `json:"offer_quantity,omitempty"`
 }
 
 type PoolAssignmentssStored struct {
