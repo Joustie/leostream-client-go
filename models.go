@@ -215,8 +215,8 @@ type PoolAssignment struct {
 	Pool_name         string `json:"pool_name,omitempty"`
 	Pool_id   		int64  `json:"pool_id,omitempty"`
 	Policy_id  		int64  `json:"policy_id,omitempty"`
-	offer_filter	string `json:"offer_filter,omitempty"`
-	offer_filter_json	string `json:"offer_filter_json,omitempty"`
+	//offer_filter	string `json:"offer_filter,omitempty"`
+	//offer_filter_json	string `json:"offer_filter_json,omitempty"`
 	plan_protocol_id	int64  `json:"plan_protocol_id,omitempty"`
 	plan_power_control_id	int64  `json:"plan_power_control_id,omitempty"`
 	plan_release_id	int64  `json:"plan_release_id,omitempty"`
