@@ -81,6 +81,24 @@ type PoolAwsCenter struct {
 	aws_vpc_id       string `json:"aws_vpc_id,omitempty"`
 }
 
+// Pool summary
+type PoolSummary struct {
+	ID           int64  `json:"id,omitempty"`
+	Name         string `json:"name,omitempty"`
+	assigned_vm  int64  `json:"assigned_vm,omitempty"`
+	available_vm int64  `json:"available_vm,omitempty"`
+	unavailable_vm int64  `json:"unavailable_vm,omitempty"`
+	total_vm    int64  `json:"total_vm,omitempty"`
+	parent_pool_id int64  `json:"parent_pool_id,omitempty"`
+	total_agent_running int64  `json:"total_agent_running,omitempty"`
+	total_connected int64  `json:"total_connected,omitempty"`
+	total_logged_in int64  `json:"total_logged_in,omitempty"`
+	total_vm_running int64  `json:"total_vm_running,omitempty"`
+	total_vm_stopped int64  `json:"total_vm_stopped,omitempty"`
+	total_vm_suspended int64  `json:"total_vm_suspended,omitempty"`
+}
+
+
 // Pool -
 type Pool struct {
 	ID                         int64          `json:"id,omitempty"`
@@ -168,4 +186,17 @@ type PoolStats struct {
 
 type PoolsStored struct {
 	Stored_data Pool `json:"stored_data,omitempty"`
+}
+
+// Policy -
+type Policy struct {
+	ID                         int64          `json:"id,omitempty"`
+	Name                       string         `json:"name"`
+	Display_name               string         `json:"display_name,omitempty"`
+	Notes                      string         `json:"notes,omitempty"`
+
+}
+
+type PoliciesStored struct {
+	Stored_data Policy `json:"stored_data,omitempty"`
 }
