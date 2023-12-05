@@ -220,6 +220,7 @@ type PoolAssignment struct {
 	Plan_power_control_id	int64  `json:"plan_power_control_id,omitempty"`
 	Plan_release_id	int64  `json:"plan_release_id,omitempty"`
 	Offer_quantity	int64  `json:"offer_quantity,omitempty"`
+	Display_mode	string `json:"display_mode,omitempty"`
 }
 
 type PoolAssignmentFilters struct {
