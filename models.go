@@ -221,7 +221,7 @@ type PoolAssignment struct {
 	Plan_release_id	int64  `json:"plan_release_id,omitempty"`
 	Offer_quantity	int64  `json:"offer_quantity,omitempty"`
 	Display_mode	string `json:"display_mode,omitempty"`
-	Start_if_stopped int64  `json:"start_if_stopped,omitempty"`
+	Start_if_stopped int64  `json:"start_if_stopped"`
 }
 
 type PoolAssignmentFilters struct {
