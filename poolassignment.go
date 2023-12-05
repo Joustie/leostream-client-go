@@ -84,7 +84,7 @@ func (c *Client) CreatePoolAssignment(poolassignment PoolAssignment, policyID in
 }
 
 // UpdatePoolAssignment - Updates a pool assignment
-func (c *Client) UpdatePoolAssignment(poolassignementID string, poolassignment PoolAssignment, policyID int, authToken *string) (*PoolAssignmentssStored, error) {
+func (c *Client) UpdatePoolAssignment(poolassignementID string, poolassignment PoolAssignment, policyID string, authToken *string) (*PoolAssignmentssStored, error) {
 	rb, err := json.Marshal(poolassignment)
 	if err != nil {
 		return nil, err
