@@ -92,6 +92,7 @@ func (c *Client) UpdatePoolAssignment(poolassignementID string, poolassignment P
 
 	req1, err1 := http.NewRequest("PUT", fmt.Sprintf("%s/policies/%s/pool-assignments/%s", "http://localhost", policyID, poolassignementID), strings.NewReader(string(rb)))
 
+	fmt.Printf("%+v\n", req1)
 	body1, err1 := c.doRequest(req1, authToken)
 	_ = body1
 	_ = err1
