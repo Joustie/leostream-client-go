@@ -90,12 +90,12 @@ func (c *Client) UpdatePoolAssignment(poolassignementID string, poolassignment P
 		return nil, err
 	}
 
-	req1, err1 := http.NewRequest("PUT", fmt.Sprintf("%s/policies/%s/pool-assignments/%s", "http://localhost", policyID, poolassignementID), strings.NewReader(string(rb)))
+	// req1, err1 := http.NewRequest("PUT", fmt.Sprintf("%s/policies/%s/pool-assignments/%s", "http://localhost", policyID, poolassignementID), strings.NewReader(string(rb)))
 
-	fmt.Printf("%+v\n", req1)
-	body1, err1 := c.doRequest(req1, authToken)
-	_ = body1
-	_ = err1
+	// fmt.Printf("%+v\n", req1)
+	// body1, err1 := c.doRequest(req1, authToken)
+	// _ = body1
+	// _ = err1
 
 	req, err := http.NewRequest("PUT", fmt.Sprintf("%s/policies/%s/pool-assignments/%s", c.HostURL, policyID, poolassignementID), strings.NewReader(string(rb)))
 	if err != nil {
