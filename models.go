@@ -34,6 +34,7 @@ type CenterDefinition struct {
 	Vc_name string `json:"vc_name,omitempty"`
 	Vc_password string `json:"vc_password,omitempty"`
 	Vc_datacenter string `json:"vc_datacenter,omitempty"`
+	Images []AwsImages `json:"images,omitempty"`
 }
 
 type CenterInfo struct {
@@ -43,7 +44,6 @@ type CenterInfo struct {
 	Os string `json:"os,omitempty"`
 	Os_version string `json:"os_version,omitempty"`
 	Type string `json:"type,omitempty"`
-	Images []AwsImages `json:"images,omitempty"`
 }
 
 type Aws_sec_groups struct {
