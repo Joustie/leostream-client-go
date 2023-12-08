@@ -38,11 +38,12 @@ type CenterDefinition struct {
 
 type CenterInfo struct {
 	Aws_sec_groups []Aws_sec_groups `json:"aws_sec_groups,omitempty"`
-	Aws_size []string `json:"aws_size,omitempty"`
+	Aws_sizes []string `json:"aws_size,omitempty"`
 	Aws_subnets []string `json:"aws_subnets,omitempty"`
 	Os string `json:"os,omitempty"`
 	Os_version string `json:"os_version,omitempty"`
 	Type string `json:"type,omitempty"`
+	Images []AwsImages `json:"images,omitempty"`
 }
 
 type Aws_sec_groups struct {
@@ -50,6 +51,11 @@ type Aws_sec_groups struct {
 	GId string `json:"gId,omitempty"`
 	GName string `json:"gName,omitempty"`
 	VpcId string `json:"vpcId,omitempty"`
+}
+
+type AwsImages struct {
+	ID string `json:"id,omitempty"`
+	Name string `json:"name,omitempty"`
 }
 
 // Gateway -
