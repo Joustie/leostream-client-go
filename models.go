@@ -21,6 +21,7 @@ type Center struct {
 	Active	   int64  `json:"active,omitempty"`
 	Center_definition CenterDefinition `json:"center_definition,omitempty"`
 	Center_info  CenterInfo `json:"center_info,omitempty"`
+	Images []AwsImages `json:"images,omitempty"`
 }
 
 type CenterDefinition struct {
@@ -34,7 +35,6 @@ type CenterDefinition struct {
 	Vc_name string `json:"vc_name,omitempty"`
 	Vc_password string `json:"vc_password,omitempty"`
 	Vc_datacenter string `json:"vc_datacenter,omitempty"`
-	Images []AwsImages `json:"images,omitempty"`
 }
 
 type CenterInfo struct {
