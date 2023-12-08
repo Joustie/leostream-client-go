@@ -86,15 +86,6 @@ type GatewaysStored struct {
 	Stored_data GatewayStored `json:"stored_data,omitempty"`
 }
 
-type NewGateway struct {
-	Name             string `json:"name"`
-	Address          string `json:"address"`
-	Address_private  string `json:"address_private"`
-	Load_balancer_id int64  `json:"load_balancer_id"`
-	Use_src_ip       int64  `json:"use_src_ip"`
-	Notes            string `json:"notes"`
-}
-
 type Provision struct {
 	Provision_on_off             int64            `json:"provision_on_off"`
 	Provision_tenant_id          int64            `json:"provision_tenant_id,omitempty"`
