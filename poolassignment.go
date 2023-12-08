@@ -58,11 +58,11 @@ func (c *Client) CreatePoolAssignment(poolassignment PoolAssignment, policyID in
 		return nil, err
 	}
 
-	req1, err1 := http.NewRequest("POST", fmt.Sprintf("%s/policies/%s/pool-assignments", "http://localhost", policyID), strings.NewReader(string(rb)))
+	// req1, err1 := http.NewRequest("POST", fmt.Sprintf("%s/policies/%s/pool-assignments", "http://localhost", policyID), strings.NewReader(string(rb)))
 
-	body1, err1 := c.doRequest(req1, authToken)
-	_ = body1
-	_ = err1
+	// body1, err1 := c.doRequest(req1, authToken)
+	// _ = body1
+	// _ = err1
 
 	req, err := http.NewRequest("POST", fmt.Sprintf("%s/policies/pool-assignments", c.HostURL, policyID), strings.NewReader(string(rb)))
 	if err != nil {
