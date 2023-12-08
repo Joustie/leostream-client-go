@@ -38,7 +38,7 @@ type CenterDefinition struct {
 
 type CenterInfo struct {
 	Aws_sec_groups []Aws_sec_groups `json:"aws_sec_groups,omitempty"`
-	Aws_sizes []string `json:"aws_size,omitempty"`
+	Aws_sizes []string `json:"aws_sizes,omitempty"`
 	Aws_subnets []string `json:"aws_subnets,omitempty"`
 	Os string `json:"os,omitempty"`
 	Os_version string `json:"os_version,omitempty"`
