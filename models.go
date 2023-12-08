@@ -40,8 +40,8 @@ type CenterInfo struct {
 	Aws_sec_groups []Aws_sec_groups `json:"aws_sec_groups,omitempty"`
 	Aws_size []string `json:"aws_size,omitempty"`
 	Aws_subnets []string `json:"aws_subnets,omitempty"`
-	Os []string `json:"os,omitempty"`
-	Os_version []string `json:"os_version,omitempty"`
+	Os string `json:"os,omitempty"`
+	Os_version string `json:"os_version,omitempty"`
 	Type string `json:"type,omitempty"`
 }
 
