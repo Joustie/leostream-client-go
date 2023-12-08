@@ -15,7 +15,7 @@ type CenterSummary struct {
 }
 
 // Center -
-type Centers struct {
+type Center struct {
 	ID           int64  `json:"id,omitempty"`
 	Name         string `json:"name,omitempty"`
 	Active	   int64  `json:"active,omitempty"`
