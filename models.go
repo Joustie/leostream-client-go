@@ -1,8 +1,8 @@
 package leostream
 
 
-// Center -
-type Center struct {
+// Centers -
+type CenterSummary struct {
 	ID           int64  `json:"id,omitempty"`
 	Name         string `json:"name,omitempty"`
 	Os           string `json:"os,omitempty"`
@@ -12,6 +12,44 @@ type Center struct {
 	Status_label string `json:"status_label,omitempty"`
 	Center_type  string `json:"type,omitempty"`
 	Type_label   string `json:"type_label,omitempty"`
+}
+
+// Center -
+type Centers struct {
+	ID           int64  `json:"id,omitempty"`
+	Name         string `json:"name,omitempty"`
+	Active	   int64  `json:"active,omitempty"`
+	Center_definition CenterDefinition `json:"center_definition,omitempty"`
+	Center_info  CenterInfo `json:"center_info,omitempty"`
+}
+
+type CenterDefinition struct {
+	Allow_rogue int64  `json:"allow_rogue,omitempty"`
+	Flavor string `json:"flavor,omitempty"`
+	Name string `json:"name,omitempty"`
+	Offer_vms int64  `json:"off_vms,omitempty"`
+	Poll_interval int64  `json:"poll_interval,omitempty"`
+	Type string `json:"type,omitempty"`
+	Type_label string `json:"type_label,omitempty"`
+	Vc_name string `json:"vc_name,omitempty"`
+	Vc_password string `json:"vc_password,omitempty"`
+	Vc_datacenter string `json:"vc_datacenter,omitempty"`
+}
+
+type CenterInfo struct {
+	Aws_sec_groups []Aws_sec_groups `json:"aws_sec_groups,omitempty"`
+	Aws_size []string `json:"aws_size,omitempty"`
+	Aws_subnets []string `json:"aws_subnets,omitempty"`
+	Os []string `json:"os,omitempty"`
+	Os_version []string `json:"os_version,omitempty"`
+	Type string `json:"type,omitempty"`
+}
+
+type Aws_sec_groups struct {
+	GDesc string `json:"gDesc,omitempty"`
+	GId string `json:"gId,omitempty"`
+	GName string `json:"gName,omitempty"`
+	VpcId string `json:"vpcId,omitempty"`
 }
 
 // Gateway -

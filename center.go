@@ -8,7 +8,7 @@ import (
 )
 
 // GetCenters - Returns list of coffees (no auth required)
-func (c *Client) GetCenters() ([]Center, error) {
+func (c *Client) GetCenters() ([]CenterSummary, error) {
 	req, err := http.NewRequest("GET", fmt.Sprintf("%s/centers", c.HostURL), nil)
 	if err != nil {
 		return nil, err
@@ -19,7 +19,7 @@ func (c *Client) GetCenters() ([]Center, error) {
 		return nil, err
 	}
 
-	centers := []Center{}
+	centers := []CenterSummary{}
 	err = json.Unmarshal(body, &centers)
 	if err != nil {
 		return nil, err
@@ -29,7 +29,7 @@ func (c *Client) GetCenters() ([]Center, error) {
 }
 
 // GetCenter - Returns specific center (no auth required)
-func (c *Client) GetCenter(centerID string) ([]Center, error) {
+func (c *Client) GetCenter(centerID string) (Center, error) {
 	req, err := http.NewRequest("GET", fmt.Sprintf("%s/centers/%s", c.HostURL, centerID), nil)
 	if err != nil {
 		return nil, err
@@ -40,8 +40,8 @@ func (c *Client) GetCenter(centerID string) ([]Center, error) {
 		return nil, err
 	}
 
-	centers := []Center{}
-	err = json.Unmarshal(body, &centers)
+	center := Center{}
+	err = json.Unmarshal(body, &center)
 	if err != nil {
 		return nil, err
 	}
