@@ -66,6 +66,12 @@ func (c *Client) CreatePoolAssignment(poolassignment PoolAssignment, policyID in
 
 	println("policyID: ", policyID)
 	fmt.Printf("%+v\n", poolassignment)
+	/*req, err := http.NewRequest("POST", fmt.Sprintf("%s/policies/%s/pool-assignments", c.HostURL, policyID), strings.NewReader(string(rb)))
+	if err != nil {
+		return nil, err
+	}*/
+
+
 	req, err := http.NewRequest("POST", fmt.Sprintf("%s/policies/%s/pool-assignments", c.HostURL, policyID), strings.NewReader(string(rb)))
 	if err != nil {
 		return nil, err
