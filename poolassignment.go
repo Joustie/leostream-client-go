@@ -51,7 +51,7 @@ func (c *Client) GetPoolAssignment(policyID string, poolAssignmentID string) (*P
 }
 
 // CreatePoolAssignment- Create new pool assignment
-func (c *Client) CreatePoolAssignment(poolassignment PoolAssignment, policyID int, authToken *string) (*PoolAssignmentssStored, error) {
+func (c *Client) CreatePoolAssignment(poolassignment PoolAssignment, policyID string, authToken *string) (*PoolAssignmentssStored, error) {
 
 	rb, err := json.Marshal(poolassignment)
 	if err != nil {
@@ -73,7 +73,7 @@ func (c *Client) CreatePoolAssignment(poolassignment PoolAssignment, policyID in
 	}*/
 
 
-	req, err := http.NewRequest("POST", fmt.Sprintf("%s/policies/1/pool-assignments", c.HostURL), strings.NewReader(string(rb)))
+	req, err := http.NewRequest("POST", fmt.Sprintf("%s/policies/%s/pool-assignments", c.HostURL, policyID), strings.NewReader(string(rb)))
 	if err != nil {
 		return nil, err
 	}
