@@ -31,7 +31,7 @@ func (c *Client) GetPoolAssignments(policyID string) ([]PoolAssignmentSummary, e
 
 // GetPolicy - Returns a specific policy
 func (c *Client) GetPoolAssignment(policyID string, poolAssignmentID string) (*PoolAssignment, error) {
-	req, err := http.NewRequest("GET", fmt.Sprintf("%s/policies/%s/pool-assignments/%s", c.HostURL, policyID, poolAssignmentID), nil)
+	req, err := http.NewRequest("GET", fmt.Sprintf("%s/policies/%s/pool-assignments/%s", c.HostURL, policyID, poolAssignmentID), nil)leostream
 	if err != nil {
 		return nil, err
 	}
@@ -130,7 +130,7 @@ func (c *Client) UpdatePoolAssignment(poolassignementID string, poolassignment P
 }
 
 // DeletePoolAssignment- Deletes a pool assignment
-func (c *Client) DeletePoolAssignment(poolassignementID string, policyID int, authToken *string) error {
+func (c *Client) DeletePoolAssignment(poolassignementID string, policyID string, authToken *string) error {
 	req, err := http.NewRequest("DELETE", fmt.Sprintf("%s/policies/%s/pool-assignments/%s", c.HostURL, policyID, poolassignementID), nil)
 	if err != nil {
 		return err
