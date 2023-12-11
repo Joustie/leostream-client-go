@@ -31,7 +31,7 @@ func (c *Client) GetPoolAssignments(policyID string) ([]PoolAssignmentSummary, e
 
 // GetPolicy - Returns a specific policy
 func (c *Client) GetPoolAssignment(policyID string, poolAssignmentID string) (*PoolAssignment, error) {
-	req, err := http.NewRequest("GET", fmt.Sprintf("%s/policies/%s/pool-assignments/%s", c.HostURL, policyID, poolAssignmentID), nil)leostream
+	req, err := http.NewRequest("GET", fmt.Sprintf("%s/policies/%s/pool-assignments/%s", c.HostURL, policyID, poolAssignmentID), nil)
 	if err != nil {
 		return nil, err
 	}
