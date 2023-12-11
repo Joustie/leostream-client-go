@@ -271,5 +271,5 @@ type Filters struct {
 }
 
 type PoolAssignmentssStored struct {
-	Stored_data Policy `json:"stored_data,omitempty"`
+	Stored_data PoolAssignment `json:"stored_data,omitempty"`
 }
