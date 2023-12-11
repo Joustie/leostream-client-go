@@ -58,21 +58,6 @@ func (c *Client) CreatePoolAssignment(poolassignment PoolAssignment, policyID st
 		return nil, err
 	}
 
-	// req1, err1 := http.NewRequest("POST", fmt.Sprintf("%s/policies/%s/pool-assignments", "http://localhost", policyID), strings.NewReader(string(rb)))
-
-	// body1, err1 := c.doRequest(req1, authToken)
-	// _ = body1
-	// _ = err1
-
-	println("policyID: ", policyID)
-	fmt.Printf("%+v\n", poolassignment)
-	fmt.Printf("%+v\n", string(rb))
-	/*req, err := http.NewRequest("POST", fmt.Sprintf("%s/policies/%s/pool-assignments", c.HostURL, policyID), strings.NewReader(string(rb)))
-	if err != nil {
-		return nil, err
-	}*/
-
-
 	req, err := http.NewRequest("POST", fmt.Sprintf("%s/policies/%s/pool-assignments", c.HostURL, policyID), strings.NewReader(string(rb)))
 	if err != nil {
 		return nil, err
@@ -98,17 +83,6 @@ func (c *Client) UpdatePoolAssignment(poolassignementID string, poolassignment P
 	if err != nil {
 		return nil, err
 	}
-
-	// req1, err1 := http.NewRequest("PUT", fmt.Sprintf("%s/policies/%s/pool-assignments/%s", "http://localhost", policyID, poolassignementID), strings.NewReader(string(rb)))
-
-	// fmt.Printf("%+v\n", req1)
-	// body1, err1 := c.doRequest(req1, authToken)
-	// _ = body1
-	// _ = err1
-
-	println("policyID: ", policyID)
-	fmt.Printf("%+v\n", poolassignment)
-	fmt.Printf("%+v\n", string(rb))
 
 	req, err := http.NewRequest("PUT", fmt.Sprintf("%s/policies/%s/pool-assignments/%s", c.HostURL, policyID, poolassignementID), strings.NewReader(string(rb)))
 	if err != nil {
