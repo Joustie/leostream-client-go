@@ -148,6 +148,18 @@ type Pool struct {
 	PoolStats				  *PoolStats     `json:"pool_stats,omitempty"`
 	Pool_domain                *PoolDomain    `json:"pool_domain,omitempty"`
 	Pool_log                   *PoolLog       `json:"pool_log,omitempty"`
+	Vms_list				   *[]Vms       `json:"vms_list,omitempty"`
+}
+
+ 
+type Vms struct {
+	Display_name string `json:"display_name,omitempty"`
+	Hda_status string `json:"hda_status,omitempty"`
+	Id int64 `json:"id,omitempty"`
+	Name string `json:"name,omitempty"`
+	Out_of_service int64 `json:"out_of_service,omitempty"`
+	Status int64 `json:"status,omitempty"`
+	User_id int64 `json:"user_id,omitempty"`	
 }
 
 type PoolDefinition struct {
